@@ -8,8 +8,8 @@ from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 import os
 import sys
-username = sys.argv[0]
-password = sys.argv[1]
+username = sys.argv[1]
+password = sys.argv[2]
 def get_captcha():
         url = "https://www.ctfhub.com/#/user/login"
         driver.get(url=url)
