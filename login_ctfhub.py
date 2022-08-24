@@ -37,8 +37,8 @@ def discern_captcha():
         image_name = get_file_read('captcha.png')
         return ocr.classification(image_name)
 def login(captcha):
-                driver.find_element_by_id("account").send_keys('ttkali')
-                driver.find_element_by_id('password').send_keys('98H.e_qVc2tQVMQ')
+                driver.find_element_by_id("account").send_keys(username)
+                driver.find_element_by_id('password').send_keys(password)
                 driver.find_element_by_id('imgCaptcha').send_keys(captcha)
                 time.sleep(2)
                 driver.find_element_by_xpath('//*[@id="formLogin"]/div[3]/div/div/span/button').click()
