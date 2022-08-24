@@ -1,4 +1,4 @@
-name: send_message
+name: login_ctf
 
 # Controls when the action will run. 
 on:
@@ -40,6 +40,7 @@ jobs:
         
       - name: 'Working'
         run: |
+          ls
           
           
           
