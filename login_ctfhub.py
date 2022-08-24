@@ -4,7 +4,6 @@ from PIL import Image
 #http请求模块
 from selenium import webdriver
 #  pip install webdriver_manager 
-from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.action_chains import ActionChains
 import os
 import sys
