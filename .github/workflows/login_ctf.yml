@@ -40,7 +40,9 @@ jobs:
         
       - name: 'Working'
         run: |
-          find / -name chromedriver
+          sudo cp -p /usr/local/bin/chromedriver /usr/bin/
+          chmod -R 777 /usr/bin/chromedriver
+          ls /usr/bin
             
           
   
