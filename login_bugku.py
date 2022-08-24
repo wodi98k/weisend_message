@@ -1,7 +1,6 @@
 from selenium import webdriver
 #  pip install webdriver_manager
 import requests 
-from webdriver_manager.chrome import ChromeDriverManager
 import time
 import ddddocr
 import sys
