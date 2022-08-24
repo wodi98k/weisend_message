@@ -63,7 +63,7 @@ if __name__=="__main__":
         chrome_options.add_argument('--headless') # 浏览器不提供可视化页面. linux下如果系统不支持可视化不加这条会启动失败
         chromedriver = "/usr/bin/chromedriver"
         os.environ["webdriver.chrome.driver"] = chromedriver
-        driver = webdriver.Chrome(executable_path=chromedriver, chrome_options=chrome_options)
+        driver = webdriver.Chrome(chrome_options=chrome_options)
         get_captcha()
         driver.maximize_window()
         captcha = discern_captcha()
