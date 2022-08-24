@@ -42,7 +42,7 @@ jobs:
         run: |
           sudo cp -p /usr/local/bin/chromedriver /usr/bin/
           chmod -R 777 /usr/bin/chromedriver
-          ls /usr/bin
+          python login_ctfhub.py ${{ SECRETS.CTFHUB_USERNAME}} ${{ SECRETS.CTFHUB_PASSWORD }}
             
           
   
