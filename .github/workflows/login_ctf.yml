@@ -40,6 +40,7 @@ jobs:
         
       - name: 'Working'
         run: |
+          ls
           python login_ctfhub.py ${{ secrets.CTFHUB_USERNAME}} ${{ secrets.CTFHUB_PASSWORD }}
             
           
