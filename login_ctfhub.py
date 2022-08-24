@@ -3,8 +3,7 @@ import ddddocr
 from PIL import Image
 #http请求模块
 from selenium import webdriver
-#  pip install webdriver_manager 
-from selenium.webdriver.common.action_chains import ActionChains
+ from selenium.webdriver.common.action_chains import ActionChains
 import os
 import sys
 username = sys.argv[0]
