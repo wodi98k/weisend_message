@@ -40,8 +40,6 @@ jobs:
         
       - name: 'Working'
         run: |
-          #sudo cp -p /usr/local/bin/chromedriver /usr/bin/
-          #chmod -R 777 /usr/bin/chromedriver
           python login_ctfhub.py ${{ secrets.CTFHUB_USERNAME}} ${{ secrets.CTFHUB_PASSWORD }}
             
           
