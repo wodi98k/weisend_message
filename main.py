@@ -19,7 +19,8 @@ class Main(object):
         "GPS":"东莞",
         'love_nates':love_notes.love_notes(),
         'aiciba':love_notes.aiciba(),
-        'love_days':Birthday.love_day()}
+        'love_days':Birthday.love_day(),
+        'briaty_day':Birthday.birthday()}
         # 发送消息
         sm.send_message(json_data=json_data)
 
