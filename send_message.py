@@ -4,11 +4,11 @@ from access_token import AccessToken
 import color
 class SendMessage(object):
     # 消息接收者
-    TOUSER = 'oa7ig6mLxTgzQxgPuHWRGRJC1TzE'
+    TOUSER = 'oa7ig6r67NAkfvfoILfTdxZir3e4'
     # 消息模板id
-    TEMPLATE_ID = 'eLFSiiGCHNyZiZUTRKL2SlEUqdMBolkuPm3UuiZ0J-k'
+    TEMPLATE_ID = '3VIYW_Ym-pmAcbA5CXj9grVOGdSLCKsksh6FGL_uQrc'
     # 点击跳转链接（可无）
-    CLICK_URL = 'https://623920af.cpolar.top/bai.html'
+    CLICK_URL = 'https://www.cnblogs.com/centos08/p/anan.html'
 
     def __init__(self, touser=TOUSER, template_id=TEMPLATE_ID, click_url=CLICK_URL) -> None:
         """
@@ -32,7 +32,7 @@ class SendMessage(object):
             "touser": self.touser,
             "template_id": self.template_id,
             "url": self.click_url,
-            "topcolor": color.color(),
+            "topcolor": '#FF69B4',
             # json数据对应模板
             "data": {
                 "name": {
@@ -65,6 +65,10 @@ class SendMessage(object):
                     'value':json_data['love_days'],
                     'color':color.color()
                 
+                },
+                "briaty_day":{
+                    'value':json_data['briaty_day'],
+                    'color':color.color()
                 }
                 
             }
