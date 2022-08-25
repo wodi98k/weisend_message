@@ -4,7 +4,7 @@ from access_token import AccessToken
 import color
 class SendMessage(object):
     # 消息接收者
-    TOUSER = 'oa7ig6mLxTgzQxgPuHWRGRJC1TzE'
+    TOUSER = 'oa7ig6r67NAkfvfoILfTdxZir3e4'
     # 消息模板id
     TEMPLATE_ID = '3VIYW_Ym-pmAcbA5CXj9grVOGdSLCKsksh6FGL_uQrc'
     # 点击跳转链接（可无）
