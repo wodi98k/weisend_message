@@ -37,6 +37,6 @@ def brithday_work():
                         sum += 1
         else:
             day += 30 - month_day  
-        return day
+        return str(day)+"天"
 
     return year_opinion()
