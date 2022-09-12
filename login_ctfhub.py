@@ -52,7 +52,7 @@ def get_submit():
                 move = driver.find_element_by_xpath('//*[@id="app"]/div/div/div[1]/div/div/div[2]/span[2]')
                 ActionChains(driver).move_to_element(move).perform()#将鼠标悬停在个人名称上，唤出二级菜单
                 driver.find_element_by_xpath('/html/body/div[2]/div/div/ul/li[1]').click()#点击签到
-                print('签到成功')
+                print('ctfhub_签到成功')
         except:
                 pass        
 if __name__=="__main__":
