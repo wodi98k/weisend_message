@@ -30,6 +30,9 @@ with open('code.png','rb') as f:
 driver.find_element_by_name('vcode').send_keys(raw_data)
 driver.find_element_by_xpath('//*[@id="login"]').click()
 time.sleep(3)
-driver.find_element_by_xpath('//*[@id="checkin"]').click()
-print('签到成功')
-time.sleep(3)
+try:
+    driver.find_element_by_xpath('//*[@id="checkin"]').click()
+    print('签到成功')
+    time.sleep(3)
+except:
+    pass
