@@ -32,7 +32,7 @@ driver.find_element_by_xpath('//*[@id="login"]').click()
 time.sleep(3)
 try:
     driver.find_element_by_xpath('//*[@id="checkin"]').click()
-    print('bugku_签到成功')
     time.sleep(3)
+    print('bugku_签到成功')
 except:
     pass
