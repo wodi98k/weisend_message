@@ -15,3 +15,12 @@ def birthday():
         return str((new_birth-max_day).days)+'天'
     else:
         return str((birth-today).days)+"天"
+def face_day():
+    birth = datetime.date(2023, 1, 17)
+    today = birth.today()
+    if birth < today:
+        new_birth = datetime.datetime(birth.year+1,month=1,day=17)
+        max_day = new_birth.today()
+        return str((new_birth-max_day).days)+'天'
+    else:
+        return str((birth-today).days)+"天"
