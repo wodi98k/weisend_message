@@ -6,7 +6,7 @@ class SendMessage(object):
     # 消息接收者
     TOUSER = 'oa7ig6mLxTgzQxgPuHWRGRJC1TzE'
     # 消息模板id
-    TEMPLATE_ID = '3VIYW_Ym-pmAcbA5CXj9grVOGdSLCKsksh6FGL_uQrc'
+    TEMPLATE_ID = 'zY1KKWymQ1fXFOLx8sw3W0t5xMTwtTBjdn1J1cDlATE'
     # 点击跳转链接（可无）
     CLICK_URL = 'https://www.cnblogs.com/centos08/p/anan.html'
 
@@ -68,6 +68,10 @@ class SendMessage(object):
                 },
                 "briaty_day":{
                     'value':json_data['briaty_day'],
+                    'color':color.color()
+                },
+                'face_day':{
+                    'value':json_data['face_day'],
                     'color':color.color()
                 }
                 
