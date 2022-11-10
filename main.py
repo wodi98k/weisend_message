@@ -1,6 +1,7 @@
 from send_message import SendMessage
 import weather
 import love_notes
+import brithday
 import Birthday
 class Main(object):
     def __init__(self) -> None:
@@ -20,7 +21,9 @@ class Main(object):
         'love_nates':love_notes.love_notes(),
         'aiciba':love_notes.aiciba(),
         'love_days':Birthday.love_day(),
-        'briaty_day':Birthday.birthday()}
+        'briaty_day':Birthday.birthday(),
+        'face_day':Birthday.face_day(),
+        }
         # 发送消息
         sm.send_message(json_data=json_data)
 
