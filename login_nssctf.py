@@ -13,8 +13,8 @@ def login():
     driver.get(url=url)
     time.sleep(2)
     wait.until(lambda driver: driver.find_element_by_xpath("/html/body/div[1]/div/section/main/div[1]/div/div/div[2]/form/div[1]/div/div/div/input"))
-    driver.find_element_by_xpath("/html/body/div[1]/div/section/main/div[1]/div/div/div[2]/form/div[1]/div/div/div/input").send_keys('2254234290@qq.com')
-    driver.find_element_by_xpath('/html/body/div[1]/div/section/main/div[1]/div/div/div[2]/form/div[2]/div/div/div/input').send_keys('qwer986587813')
+    driver.find_element_by_xpath("/html/body/div[1]/div/section/main/div[1]/div/div/div[2]/form/div[1]/div/div/div/input").send_keys(username)
+    driver.find_element_by_xpath('/html/body/div[1]/div/section/main/div[1]/div/div/div[2]/form/div[2]/div/div/div/input').send_keys(password)
 def get_track(distance):
     '''
     拿到移动轨迹，模仿人的滑动行为，先匀加速后匀减速
