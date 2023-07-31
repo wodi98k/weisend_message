@@ -9,9 +9,9 @@ username = sys.argv[1]
 password = sys.argv[2]
 url = "https://www.ctfer.vip/user/login?redirect=/index"
 def login():
-    wait = ui.WebDriverWait(driver,10)
+    wait = ui.WebDriverWait(driver,15)
     driver.get(url=url)
-    time.sleep(2)
+    time.sleep(3)
     wait.until(lambda driver: driver.find_element_by_xpath("/html/body/div[1]/div/section/main/div[1]/div/div/div[2]/form/div[1]/div/div/div/input"))
     driver.find_element_by_xpath("/html/body/div[1]/div/section/main/div[1]/div/div/div[2]/form/div[1]/div/div/div/input").send_keys(username)
     driver.find_element_by_xpath('/html/body/div[1]/div/section/main/div[1]/div/div/div[2]/form/div[2]/div/div/div/input').send_keys(password)
