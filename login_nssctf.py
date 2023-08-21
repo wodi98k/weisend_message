@@ -7,7 +7,7 @@ import os
 import sys
 username = sys.argv[1]
 password = sys.argv[2]
-url = "https://www.ctfer.vip/user/login?redirect=/index"
+url = "https://www.nssctf.cn/user/login?redirect=/index"
 def login():
     wait = ui.WebDriverWait(driver,15)
     driver.get(url=url)
