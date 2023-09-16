@@ -15,6 +15,8 @@ def login():
     #wait.until(lambda driver: driver.find_element_by_xpath("/html/body/div[1]/div/section/main/div[1]/div/div/div[2]/form/div[1]/div/div/div/input"))
     driver.find_element_by_xpath("/html/body/div[1]/div/section/main/div[1]/div/div/div[2]/form/div[1]/div/div/div/input").send_keys(username)
     driver.find_element_by_xpath('/html/body/div[1]/div/section/main/div[1]/div/div/div[2]/form/div[2]/div/div/div/input').send_keys(password)
+    driver.find_element_by_xpath('//*[@id="app"]/section/main/div[1]/div/div/div[2]/form/div[3]/div/div/div[1]/label[2]/span[1]/span')
+    
 def get_track(distance):
     '''
     拿到移动轨迹，模仿人的滑动行为，先匀加速后匀减速
