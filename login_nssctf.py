@@ -9,14 +9,14 @@ username = sys.argv[1]
 password = sys.argv[2]
 url = "https://www.nssctf.cn/user/login?redirect=/index"
 def login():
-    wait = ui.WebDriverWait(driver,15)
+    wait = ui.WebDriverWait(driver,10)
     driver.get(url=url)
-    time.sleep(3)
-    #wait.until(lambda driver: driver.find_element_by_xpath("/html/body/div[1]/div/section/main/div[1]/div/div/div[2]/form/div[1]/div/div/div/input"))
+    time.sleep(2)
+    wait.until(lambda driver: driver.find_element_by_xpath("/html/body/div[1]/div/section/main/div[1]/div/div/div[2]/form/div[1]/div/div/div/input"))
     driver.find_element_by_xpath("/html/body/div[1]/div/section/main/div[1]/div/div/div[2]/form/div[1]/div/div/div/input").send_keys(username)
     driver.find_element_by_xpath('/html/body/div[1]/div/section/main/div[1]/div/div/div[2]/form/div[2]/div/div/div/input').send_keys(password)
-    driver.find_element_by_xpath('//*[@id="app"]/section/main/div[1]/div/div/div[2]/form/div[3]/div/div/div[1]/label[2]/span[1]/span')
-    
+    driver.find_element_by_xpath('//*[@id="app"]/section/main/div[1]/div/div/div[2]/form/div[3]/div/div/div[1]/label[1]/span[1]/span').click()
+    driver.find_element_by_xpath('//*[@id="app"]/section/main/div[1]/div/div/div[2]/form/div[3]/div/div/div[1]/label[2]/span[1]/span').click()
 def get_track(distance):
     '''
     拿到移动轨迹，模仿人的滑动行为，先匀加速后匀减速
@@ -28,7 +28,7 @@ def get_track(distance):
     :return: 存放每0.2秒移动的距离
     '''
     # 初速度
-    v=0
+    v=5
     # 单位时间为0.2s来统计轨迹，轨迹即0.2内的位移
     t=0.1
     # 位移/轨迹列表，列表内的一个元素代表0.2s的位移
@@ -68,15 +68,17 @@ def move_to_gap(tracks):
     need_move_span = driver.find_element_by_xpath('/html/body/div[1]/div/section/main/div[1]/div/div/div[2]/form/div[3]/div/div/div/div[3]')
     ActionChains(driver).click_and_hold(need_move_span).perform()
     for x in tracks:
+        print(x)
         ActionChains(driver).move_by_offset(xoffset=x,yoffset=0).perform()
     time.sleep(1)
     ActionChains(driver).release().perform()
     get_register()
 def get_register():
     driver.find_element_by_xpath("/html/body/div[1]/div/section/main/div[1]/div/div/div[2]/form/div[4]/div/div/div[2]/button").click()
-    time.sleep(5)
-    driver.find_element_by_css_selector('#app > section > header > ul > li.el-menu-item-group > ul > div:nth-child(5)').click()
-    print("NSSCTF签到成功")
+    time.sleep(3)
+    driver.find_element_by_xpath('//*[@id="app"]/section/header/ul/li[8]/ul/div[3]/span').click()
+
+    print("签到成功")
 if __name__ == '__main__':
     chrome_options = webdriver.ChromeOptions()
     chrome_options.add_argument('--no-sandbox') # 解决DevToolsActivePort文件不存在的报错
@@ -85,11 +87,7 @@ if __name__ == '__main__':
     chrome_options.add_argument('--headless') # 浏览器不提供可视化页面. linux下如果系统不支持可视化不加这条会启动失败
     chromedriver = "/usr/bin/chromedriver"
     os.environ["webdriver.chrome.driver"] = chromedriver
-    driver = webdriver.Chrome(executable_path=chromedriver,chrome_options=chrome_options)
+    driver = webdriver.Chrome(chrome_options=chrome_options)
+    driver.maximize_window()
     login()
-    move_to_gap(get_track(300))
-
-
-
-
-
+    move_to_gap(get_track(250))
