@@ -76,15 +76,17 @@ def move_to_gap(tracks):
 def get_register():
     driver.find_element_by_xpath("/html/body/div[1]/div/section/main/div[1]/div/div/div[2]/form/div[4]/div/div/div[2]/button").click()
     time.sleep(3)
-    driver.find_element_by_xpath('//*[@id="app"]/section/header/ul/li[8]/ul/div[3]/span').click()
-
-    print("签到成功")
+    try:
+        driver.find_element_by_xpath('//*[@id="app"]/section/header/ul/li[8]/ul/div[3]/span').click()
+        print("签到成功")
+    except:
+        pass
 if __name__ == '__main__':
     chrome_options = webdriver.ChromeOptions()
     chrome_options.add_argument('--no-sandbox') # 解决DevToolsActivePort文件不存在的报错
     chrome_options.add_argument('window-size=1920x1080') # 指定浏览器分辨率
     chrome_options.add_argument('--disable-gpu') # 谷歌文档提到需要加上这个属性来规避bug
-    chrome_options.add_argument('--headless') # 浏览器不提供可视化页面. linux下如果系统不支持可视化不加这条会启动失败
+    # chrome_options.add_argument('--headless') # 浏览器不提供可视化页面. linux下如果系统不支持可视化不加这条会启动失败
     chromedriver = "/usr/bin/chromedriver"
     os.environ["webdriver.chrome.driver"] = chromedriver
     driver = webdriver.Chrome(chrome_options=chrome_options)
