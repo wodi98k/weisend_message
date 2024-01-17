@@ -68,7 +68,6 @@ def move_to_gap(tracks):
     need_move_span = driver.find_element_by_xpath('/html/body/div[1]/div/section/main/div[1]/div/div/div[2]/form/div[3]/div/div/div/div[3]')
     ActionChains(driver).click_and_hold(need_move_span).perform()
     for x in tracks:
-        print(x)
         ActionChains(driver).move_by_offset(xoffset=x,yoffset=0).perform()
     time.sleep(1)
     ActionChains(driver).release().perform()
